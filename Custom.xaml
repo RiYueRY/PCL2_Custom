@@ -1,0 +1,91 @@
+<local:MyCard Title="Minecraft 启动中心" Margin="0,0,0,15" CanSwap="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,15" FontSize="16" Foreground="{DynamicResource ColorBrush3}"
+                    Text="准备好开始冒险了吗？" />
+        
+        <!-- 主功能区 - 统一按钮高度为38 -->
+        <Grid Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="38" ColorType="Highlight"
+                        Text="启动游戏" EventType="启动游戏" EventData="\current" />
+            <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="38"
+                        Text="下载游戏" EventType="切换页面" EventData="1|1" ToolTip="下载新游戏版本" />
+            <local:MyButton Grid.Column="2" Margin="0,0,0,0" Height="38"
+                        Text="启动设置" EventType="切换页面" EventData="3|0" ToolTip="管理游戏启动相关设置" />
+        </Grid>
+        
+        <!-- 快捷功能 - 保持高度38一致 -->
+        <TextBlock TextWrapping="Wrap" Margin="0,15,0,8" FontWeight="Bold"
+                    Text="快捷工具" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="38"
+                        Text="清理垃圾" EventType="清理垃圾" ToolTip="清理无用缓存文件" />
+            <local:MyButton Grid.Column="1" Margin="0,0,10,0" Height="38"
+                        Text="内存优化" EventType="内存优化" ToolTip="优化系统内存使用" />
+            <local:MyButton Grid.Column="2" Margin="0,0,0,0" Height="38"
+                        Text="全局设置" EventType="切换页面" EventData="3|2" ToolTip="启动器全局设置" />
+        </Grid>
+    </StackPanel>
+</local:MyCard>
+
+<!-- 其余部分保持不变 -->
+<local:MyCard Title="常用服务器" Margin="0,0,0,15" CanSwap="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Title="Hypixel" Info="全球最大的小游戏服务器 | 使用当前版本"
+                    EventType="启动游戏" EventData="\current|mc.hypixel.net" Type="Clickable" />
+        
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Title="2b2t" Info="最古老的生存服务器 | 使用当前版本"
+                    EventType="启动游戏" EventData="\current|2b2t.org" Type="Clickable" />
+        
+        <local:MyListItem Margin="-5,2,-5,8"
+                    Title="Mineplex" Info="经典小游戏服务器 | 使用当前版本"
+                    EventType="启动游戏" EventData="\current|us.mineplex.com" Type="Clickable" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="资源中心" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyTextButton Margin="0,0,0,10" HorizontalAlignment="Left"
+                    Text="Minecraft Wiki (中文权威百科)" EventType="打开网页" EventData="https://zh.minecraft.wiki/" />
+        
+        <local:MyTextButton Margin="0,0,0,10" HorizontalAlignment="Left"
+                    Text="MC百科 (中文模组资料库)" EventType="打开网页" EventData="https://www.mcmod.cn" />
+        
+        <local:MyTextButton Margin="0,0,0,10" HorizontalAlignment="Left"
+                    Text="CurseForge (国际模组平台)" EventType="打开网页" EventData="https://www.curseforge.com/minecraft/mc-mods" />
+        
+        <local:MyTextButton Margin="0,0,0,10" HorizontalAlignment="Left"
+                    Text="NameMC (皮肤下载)" EventType="打开网页" EventData="https://namemc.com/" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="今日小贴士" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource ColorBrush3}"
+                    Text="{hint}" />
+        <local:MyTextButton HorizontalAlignment="Center" Padding="20,5"
+                    Text="换一条提示" EventType="刷新主页" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="关于 PCL2" Margin="0,0,0,0" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,8"
+                    Text="Plain Craft Launcher 2" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" FontSize="11" Foreground="#888888"
+                    Text="简洁高效 · 轻量快速 · 自定义强" />
+        <local:MyTextButton HorizontalAlignment="Center" Padding="20,5"
+                    Text="检查更新" EventType="刷新主页" />
+    </StackPanel>
+</local:MyCard>
